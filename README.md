@@ -39,4 +39,32 @@ Markdown 的标记语法有极好的可读性。
 一篇文章中只能出现一个 # 号标题
 ## 二.学习git
 ### 1.安装
-进入git官网后
+进入git官网后下载git到windows，根据提示安装。
+### 2.简单配置
+Git 基本命令：
+>git log ：查看提交历史
+git diff ：查看文件修改的内容
+git init ：在本地创建代码仓库
+git reset ：在版本之间进行穿梭
+git status ：查看当前工作区的状态
+git add <文件名> ：添加文件到暂存区
+git commit -m "提交说明" ：进行提交，并创建一个新的版本
+##### 关联github
+>使用git remote add origin [git@github.com](https://link.jianshu.com/?t=mailto:git@github.com):username/yourProject.git命令将本地仓库和远程仓库进行关联，在这之前，必须要在远程仓库建立一个和本地仓库一样的工程才行，而且必须在配置了ssh.
+##### 克隆功能
+>可以使用克隆命令把远程仓库克隆到本地，使用的命令如下：git clone [git@github.com](https://link.jianshu.com/?t=mailto:git@github.com):username/yourProject.git
+##### 分支功能
+>创建分支：git branch <分支名>
+切换分支：git checkout <分支名>
+删除分支： git branch -d <分支名>
+创建并切换分支 git checkout -b <分支名>
+查看分支：git branch，使用此功能，显示的*号的分支我当前分支
+>合并某分支到当前分支：git merge <分支名>，此时采用的是"快进模式"合并
+##### 多人协作
+>git remote -v：查看远程库信息
+>本地新建的分支如果不推送到远程，对其他人就是不可见的，
+从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交，
+在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致，
+建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name。
+
